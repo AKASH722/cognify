@@ -17,8 +17,11 @@ import { Input } from "@/components/ui/input";
 import { useTransition } from "react";
 import { toast } from "sonner";
 import { signup } from "@/section/auth/actions";
+import { useRouter } from "next/navigation";
 
 export default function SignupForm() {
+  const router = useRouter();
+
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<SignupSchema>({
@@ -38,6 +41,7 @@ export default function SignupForm() {
         toast.error(response.error);
       } else {
         toast.success(response.message);
+        router.push("/");
       }
     });
   }

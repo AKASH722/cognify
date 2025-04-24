@@ -1,9 +1,5 @@
-import { Button } from "@/components/ui/button";
+import Logout from "@/section/auth/logout";
 
 export default function Home() {
-  return (
-    <Button>
-      Cognify
-    </Button>
-  );
+  return <Logout />;
 }
