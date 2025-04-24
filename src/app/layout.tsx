@@ -1,6 +1,7 @@
 import React from "react";
 import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 import type { Metadata } from "next";
@@ -29,10 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${satoshi.variable} ${poppins.className} antialiased`}
-      >
+      <body className={`${satoshi.variable} ${poppins.className} antialiased`}>
         {children}
+        <Toaster />
       </body>
     </html>
   );
